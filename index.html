@@ -979,7 +979,7 @@
             '<p>Reach devices and services in an office or cloud network.</p>'+ 
             '<span class="eg">internal dashboards · shared drive · servers · office LAN · AWS, GCP or Azure VPC</span></button>'+
         '</div>'+
-        '<button class="btn quiet" data-go="machines">← Back to Machines</button>'+
+        '<button class="btn" data-go="machines">Back</button>'+ 
       '</section>';
   }
 
@@ -997,11 +997,12 @@
                  '<span class="cbox">'+IC.check+'</span>'+
                  '<span><b>'+esc(g.t)+'</b><em>'+esc(g.d)+'</em></span></button>';
         }).join('')+'</div>'+
-        '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">'+
-          '<button class="btn primary" data-go="wizard"'+(any?'':' disabled')+'>Continue</button>'+ 
-          '<button class="btn quiet" data-go="pick">← Change location</button>'+ 
+        '<div class="actions">'+
+          '<button class="btn" data-go="pick">Back</button>'+ 
+          '<span class="grow"></span>'+ 
           (any?'':'<span style="font-size:13.5px;color:var(--text-faint)">Choose one to continue.</span>')+
-        '</div>'+
+          '<button class="btn primary" data-go="wizard"'+(any?'':' disabled')+'>Continue</button>'+ 
+        '</div>'+ 
       '</section>';
   }
 
@@ -1147,7 +1148,7 @@
       (s.adv ? '<details class="adv"><summary>'+esc(s.adv.label)+'</summary><div class="advbody"><pre>'+esc(s.adv.code)+'</pre>'+(s.adv.note?'<p class="note">'+esc(s.adv.note)+'</p>':'')+'</div></details>' : '')+
       '</div>'+ 
       '<div class="actions">'+
-        (S.i>0 ? '<button class="btn" data-nav="back">Back</button>' : '<button class="btn" data-go="goals">Change goal</button>')+
+        (S.i>0 ? '<button class="btn" data-nav="back">Back</button>' : '<button class="btn" data-go="goals">Back</button>')+
         '<span class="grow"></span>'+
         '<button class="btn primary" data-nav="next"'+(canContinue?'':' disabled')+'>'+(last?'Finish setup':'Continue')+'</button>'+ 
       '</div></section>';
